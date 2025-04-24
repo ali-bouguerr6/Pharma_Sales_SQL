@@ -63,13 +63,6 @@ LIMIT 5;
 
 ```
 
-## 🛠 Technologies
-
-SQLite 3 : moteur de base de données
-SQL : création, insertion, requêtes
-Bash : script d'automatisation
-Python 
-
 ## Auteurs
 
 - Ali BOUGUERRA
