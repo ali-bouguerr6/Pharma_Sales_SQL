@@ -40,16 +40,32 @@ Le projet « Pharma Sales & Inventory Management » répond à différents bes
 
 ![](D-E-R.png)
 
+## Choix de conception
+
+- Clé composite dans STOCKS : le couple (pharm_id, med_id) garantit l’unicité d’un médicament dans une pharmacie et prévient les doublons.
+
+- Intégrité référentielle : toutes les relations sont sécurisées par des clés étrangères, ce qui bloque la suppression de données encore référencées.
+
+- Historique des ventes : la table VENTES séparée de LIGNE_VENTES permet de conserver à la fois l’en‑tête (date, client, pharmacie) et le détail de chaque article vendu.
+
+- Extensibilité : le modèle peut facilement accueillir de nouvelles entités (retours, paiements, catégories de médicaments, entrepôts) sans refonte majeure.
+
+## Limitations
 
 
-## ⚙️ Installation & Lancement
 
-1. **Cloner le projet :**
+## Exercice / Requetes SQL = "PharmoMEd"
 
-```bash
-git clone https://github.com/ton-utilisateur/SQL_Pharma.git
-cd SQL_Pharma
-```
+![](PharmoMEd.png)
+
+
+# Contexte : 
+Vous êtes data analyst chez PharmaFacto, un laboratoire qui vend ses médicaments via un réseau de pharmacies partenaires.
+Votre mission : extraire des indicateurs clés pour le reporting mensuel et pour répondre aux questions de la direction logistique / commerciale.
+
+# Question à résoudre : 
+
+
 
 
 ## Exemples de requêtes utiles
@@ -69,6 +85,15 @@ GROUP BY med_id
 ORDER BY total_vendu DESC
 LIMIT 5;
 
+```
+
+## ⚙️ Installation & Lancement
+
+1. **Cloner le projet :**
+
+```bash
+git clone https://github.com/ton-utilisateur/SQL_Pharma.git
+cd SQL_Pharma
 ```
 
 ## Auteurs
