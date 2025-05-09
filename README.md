@@ -60,7 +60,7 @@ Le projet « Pharma Sales & Inventory Management » répond à différents bes
 
 
 # Contexte : 
-Vous êtes data analyst chez PharmaFacto, un laboratoire qui vend ses médicaments via un réseau de pharmacies partenaires.
+Vous êtes data analyst chez PharmoFacto, un laboratoire qui vend ses médicaments via un réseau de pharmacies partenaires.
 Votre mission : extraire des indicateurs clés pour le reporting mensuel et pour répondre aux questions de la direction logistique / commerciale.
 
 # Question à résoudre : 
