@@ -5,10 +5,10 @@ Ce projet est un système de gestion des **ventes** et des **stocks** dans une *
 ## 🗃️ Objectif
 
 L’objectif principal est de :
-    • Constituer et maintenir un catalogue de médicaments (nom, dosage, forme, prix unitaire).
-    • Suivre les pharmacies clientes, les fournisseurs et les clients finaux.
-    • Enregistrer les ventes et détailler chaque commande (lignes de vente).
-    • Gérer les niveaux de stock, avec contrôle des seuils d’alerte pour réapprovisionnement.
+- Constituer et maintenir un catalogue de médicaments (nom, dosage, forme, prix unitaire).
+- Suivre les pharmacies clientes, les fournisseurs et les clients finaux.
+- Enregistrer les ventes et détailler chaque commande (lignes de vente).
+- Gérer les niveaux de stock, avec contrôle des seuils d’alerte pour réapprovisionnement.
 
 Le projet « Pharma Sales & Inventory Management » répond à différents besoin au sein d’une industrie pharmaceutique tels traiter les ventes (création de commandes, calcul des totaux), gérer les stocks par médicament et par pharmacie (suivi des quantités disponibles, seuils d’alerte pour réapprovisionnement) et enregistrer et suivre les pharmacies clientes, les fournisseurs de médicament et les clients finaux.
 
