@@ -1,14 +1,16 @@
 # 💊 Pharma Sales & Inventory Management (SQL Project)
 
-Ce projet est un système de gestion des **ventes** et des **stocks** dans une **industrie pharmaceutique**. Il a été développé dans le cadre d’un exercice pratique SQL.
+Ce projet est un système de gestion des **ventes** et des **stocks** dans une **industrie pharmaceutique**. Il a été développé dans le cadre d’un exercice pratique SQL.Les données de la base sont fictives et ont été générées par une intelligence artificielle.
 
 ## 🗃️ Objectif
 
-Créer une base de données relationnelle permettant de :
-- Gérer un catalogue de médicaments (nom, dosage, prix)
-- Suivre les pharmacies, fournisseurs et clients
-- Enregistrer les ventes et suivre les lignes de commande
-- Gérer les stocks avec seuils d’alerte
+L’objectif principal est de :
+    • Constituer et maintenir un catalogue de médicaments (nom, dosage, forme, prix unitaire).
+    • Suivre les pharmacies clientes, les fournisseurs et les clients finaux.
+    • Enregistrer les ventes et détailler chaque commande (lignes de vente).
+    • Gérer les niveaux de stock, avec contrôle des seuils d’alerte pour réapprovisionnement.
+
+Le projet « Pharma Sales & Inventory Management » répond à différents besoin au sein d’une industrie pharmaceutique tels traiter les ventes (création de commandes, calcul des totaux), gérer les stocks par médicament et par pharmacie (suivi des quantités disponibles, seuils d’alerte pour réapprovisionnement) et enregistrer et suivre les pharmacies clientes, les fournisseurs de médicament et les clients finaux.
 
 ## 📁 Structure du projet
 
