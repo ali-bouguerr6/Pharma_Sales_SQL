@@ -65,25 +65,42 @@ Votre mission : extraire des indicateurs clés pour le reporting mensuel et po
 
 # Question à résoudre : 
 
-
-
-
-## Exemples de requêtes utiles
-
-```bash
-
-Exemple :  Médicaments en dessous du seuil
-SELECT * FROM stocks WHERE quantite_disponible < seuil;
-
-Exemple : Total de ventes par pharmacie
+1. Total de ventes par pharmacie
+   
+```
 SELECT pharm_id, COUNT(*) FROM ventes GROUP BY pharm_id;
+```
 
-Exemple : Médicaments les plus vendus
+2. Médicaments les plus vendus
+
+```
 SELECT med_id, SUM(quantite) as total_vendu
 FROM ligne_ventes
 GROUP BY med_id
 ORDER BY total_vendu DESC
 LIMIT 5;
+```
+
+3. Total de ventes par pharmacie
+
+```
+SELECT pharm_id, COUNT(*) FROM ventes GROUP BY pharm_id;
+```
+
+4. Valeur de stock (en €) par pharmacie
+
+```
+SELECT p.pharm_id, p.nom, ROUND(SUM(s.quantite_disponible * m.prix_unitaire),2) AS valeur_stock FROM stocks s JOIN medicaments m USING (med_id) JOIN pharmacies p USING (pharm_id) GROUP BY p.pharm_id;
+```
+
+5.
+
+
+
+
+
+
+
 
 ```
 
