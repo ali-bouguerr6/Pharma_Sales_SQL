@@ -102,8 +102,19 @@ SELECT p.pharm_id, p.nom, ROUND(SUM(s.quantite_disponible * m.prix_unitaire),2) 
 
 
 
-```
 
+## Perspectives d'amélioration 
+
+Cette base peut être enrichie avec :
+
+- Un historique des prix des médicaments (variations datées)
+
+- Des données d’approvisionnement : fournisseur, coût, délai de livraison
+
+- La traçabilité des mouvements de stock (entrées, sorties, inventaires)
+
+
+```
 ## ⚙️ Installation & Lancement
 
 1. **Cloner le projet :**
@@ -112,6 +123,8 @@ SELECT p.pharm_id, p.nom, ROUND(SUM(s.quantite_disponible * m.prix_unitaire),2) 
 git clone https://github.com/ton-utilisateur/SQL_Pharma.git
 cd SQL_Pharma
 ```
+
+
 
 ## Auteurs
 
