@@ -34,6 +34,12 @@ Créer une base de données relationnelle permettant de :
 
 - README.md : fichier d'explication du projet, de son but et de son exécution
 
+## Modèle Conceptuel : Entités et Relations
+
+![](D-E-R)
+
+
+
 ## ⚙️ Installation & Lancement
 
 1. **Cloner le projet :**
