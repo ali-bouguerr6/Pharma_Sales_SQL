@@ -50,17 +50,14 @@ Le projet « Pharma Sales & Inventory Management » répond à différents bes
 
 - Extensibilité : le modèle peut facilement accueillir de nouvelles entités (retours, paiements, catégories de médicaments, entrepôts) sans refonte majeure.
 
-## Limitations
 
-
-
-## Exercice / Requetes SQL = "PharmoMEd"
+## Exercice SQL : Gestion des ventes PharmoMEd
 
 ![](PharmoMEd.png)
 
 
 # Contexte : 
-Vous êtes data analyst chez PharmoFacto, un laboratoire qui vend ses médicaments via un réseau de pharmacies partenaires.
+Vous êtes data analyst chez PharmoMEd, un laboratoire qui vend ses médicaments via un réseau de pharmacies partenaires.
 Votre mission : extraire des indicateurs clés pour le reporting mensuel et pour répondre aux questions de la direction logistique / commerciale.
 
 # Question à résoudre : 
@@ -93,14 +90,57 @@ SELECT pharm_id, COUNT(*) FROM ventes GROUP BY pharm_id;
 SELECT p.pharm_id, p.nom, ROUND(SUM(s.quantite_disponible * m.prix_unitaire),2) AS valeur_stock FROM stocks s JOIN medicaments m USING (med_id) JOIN pharmacies p USING (pharm_id) GROUP BY p.pharm_id;
 ```
 
-5.
+5.Lister les médicaments vendus avec leur quantité et le prix total par ligne
+
+```
+SELECT lv.ligne_id, m.nom AS medicament, lv.quantite, lv.prix_vente, (lv.quantite * lv.prix_vente) AS total_ligne
+FROM ligne_ventes lv
+JOIN medicaments m ON lv.med_id = m.med_id;
+```
+
+6. Afficher le stock restant par pharmacie et médicament
+   
+```
+SELECT ph.nom AS pharmacie, m.nom AS medicament, s.quantite_disponible, s.seuil
+FROM stocks s
+JOIN pharmacies ph ON s.pharm_id = ph.pharm_id
+JOIN medicaments m ON s.med_id = m.med_id;
+```
+
+7.Afficher le chiffre d'affaires total par pharmacie
+
+```
+SELECT p.nom AS pharmacie, SUM(lv.quantite * lv.prix_vente) AS chiffre_affaires
+FROM pharmacies p
+JOIN ventes v ON p.pharm_id = v.pharm_id
+JOIN ligne_ventes lv ON v.vente_id = lv.vente_id
+GROUP BY p.pharm_id, p.nom;
+```
+
+8.Afficher les 3 médicaments les plus chers
+
+```
+SELECT nom, prix_unitaire
+FROM medicaments
+ORDER BY prix_unitaire DESC
+LIMIT 3;
+```
+9. Afficher les médicaments triés par prix décroissant
+    
+```
+SELECT nom, prix_unitaire
+FROM medicaments
+ORDER BY prix_unitaire DESC;
+```
 
 
+## Limitations 
 
+- Base de données fictive, avec un volume limité de données (pas testé en situation réelle).
 
+- Pas de gestion des retours, annulations ou remboursements.
 
-
-
+- Pas de suivi des marges, des coûts d’achat ni des bénéfices réels.
 
 
 ## Perspectives d'amélioration 
@@ -114,9 +154,10 @@ Cette base peut être enrichie avec :
 - La traçabilité des mouvements de stock (entrées, sorties, inventaires)
 
 
-```
+
 ## ⚙️ Installation & Lancement
 
+```
 1. **Cloner le projet :**
 
 ```bash
